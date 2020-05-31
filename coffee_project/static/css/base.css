@@ -64,6 +64,7 @@
 
 .logo-header {
     cursor: default;
+    user-select: none;
 }
 
 @keyframes AppearIn {
@@ -105,6 +106,7 @@
     padding-bottom: 1rem;
     font-family: 'Bebas Neue', cursive;
     cursor: default;
+    user-select: none;
 }
 
 .contact-info {
@@ -142,6 +144,7 @@
 .copywrite {
     color: black;
     cursor: default;
+    user-select: none;
 }
 
 .createdby {
@@ -152,6 +155,32 @@
 .createdby:hover {
     cursor: pointer;
     color: #616058;
+}
+
+@media only screen and (max-width: 600px) {
+    .navbar {
+        justify-content: center;
+    }
+    .nav-link {
+        margin: 0 15px;
+    }
+    
+    .contactpara {
+        display: block;
+    }
+
+    .contact-info {
+        font-size: 12px;
+    }
+
+    .visit {
+        font-size: 1.2rem;
+        margin-top: 10px;
+    }
+
+    .copywrite, .createdby {
+        font-size: 12px;
+    }
 }
 
 
