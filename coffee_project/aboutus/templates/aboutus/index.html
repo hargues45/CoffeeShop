@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block header %}
+    <title>Zan's Coffee - About</title>
+    <link rel='stylesheet' href="{% static 'aboutus/css/styles.css' %}" type='text/css'>
+    {% endblock header %}
+</head>
+<body>
+    {% block content1 %}
+    <h1 class="logo-header">About Us</h1>
+    {% endblock content1 %}
+    {% block content2 %}
+    <div class='aboutus-container'>
+        
+    </div>
+    {% endblock content2 %}     
+    {% block javascript %}    
+    {% endblock javascript %}
+</body>
+</html>

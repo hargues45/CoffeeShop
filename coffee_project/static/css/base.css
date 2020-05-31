@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 85%;
+    width: 100%;
+    background-image: url(../photos/coffee2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    height: 10vh;
+    width: 100%;
+    font-family: sans-serif;
+    background-color: rgba(0, 0, 0, 0.6); 
+}
+
+.nav-link {
+    margin: 0 23px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+.nav-link:hover {
+    color: turquoise;
+}
+
+.body-content {
+    position: relative;
+    width: 100%;
+    height: 90%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.logo {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    color: white;
+    border-radius: 5px;
+    border: thick solid white;
+    z-index: 1;
+    height: 250px;
+    width: 300px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    animation: AppearIn 2s ease-in forwards;
+}
+
+.logo-header {
+    cursor: default;
+}
+
+@keyframes AppearIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.contactinfo{
+    width: 100%;
+    height: 50vh;
+    background-color: turquoise;
+    display: flex;
+    flex-direction: row;        
+}
+
+.blankdiv {
+    width: 15%;
+    height: 100%;
+    background-color: rgb(21, 21, 30);
+}
+
+.contactpara {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.visit { 
+    color: black;
+    font-size: 2.8rem;
+    padding-bottom: 1rem;
+    font-family: 'Bebas Neue', cursive;
+    cursor: default;
+}
+
+.contact-info {
+    color: #616058;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 2.1rem;
+}
+
+.mapdiv {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.map {
+    height: 75%;
+    width: 75%;
+}
+
+.footer {
+    height: 8vh;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.copywrite {
+    color: black;
+    cursor: default;
+}
+
+.createdby {
+    text-decoration: underline;
+    margin-left: 4px;
+}
+
+.createdby:hover {
+    cursor: pointer;
+    color: #616058;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,108 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    {% block header %}
+    <title>Document</title>    
+    {% endblock header %}
+    <link rel='stylesheet' href="{% static 'css/base.css' %}" type"text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <div class='container'>
+        <div class='navbar'>
+                <a class="nav-link" href="{% url 'home' %}">Home</a>
+                <a class="nav-link" href="{% url 'aboutus' %}">About</a>
+                <a class="nav-link">Menu</a>
+                <a class="nav-link">Contact</a>        
+        </div>
+        <div class='body-content'>
+            <div class="logo">
+                {% block content1 %}
+                <h1 class="logo-header">Zan's Coffee</h1>
+                {% endblock content1 %}
+            </div>            
+        </div>
+        {% block content2 %}
+        {% endblock content2 %}
+        <section class="contactinfo">
+            <div class='contactpara'>
+                <h1 class='visit'>Come Visit Us!</h1>
+                <p class='contact-info'>Zan's Coffee House</p>
+                <p class='contact-info'>1234 N Dummy Street</p>
+                <p class='contact-info'>Vilonia, Arkansas 72173</p>
+                <p class='contact-info'>zans@zanscoffee.com</p>
+                <p class='contact-info'>123-456-7890</p>
+            </div>
+            <div class="mapdiv">
+                <iframe class='map' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3265.5686754246676!2d-92.20006034980698!3d35.06752138024541!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87d28c4c1600284f%3A0x6c7c72af34d77190!2s43%20Dove%20Ln%2C%20Vilonia%2C%20AR%2072173!5e0!3m2!1sen!2sus!4v1590725194545!5m2!1sen!2sus" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+        </section>
+        <footer class="footer">
+            <span class="copywrite">© 2020-2020 by Zan's Coffee. Created by </span>
+            <a class='createdby'> Hunter Hargues</a>
+        </footer>
+    </div> 
+    
+    <script>
+        var scroll = window.requestAnimationFrame ||
+             // IE Fallback
+             function(callback){ window.setTimeout(callback, 1000/60)};
+        var elementsToShow = document.querySelectorAll('.section-link'); 
+
+        function loop() {
+
+            Array.prototype.forEach.call(elementsToShow, function(element){
+            if (isElementInViewport(element)) {
+                element.classList.add('is-visible');
+            } else {
+                element.classList.remove('is-visible');
+            }
+            });
+
+            scroll(loop);
+        }
+
+        // Call the loop for the first time
+        loop();
+
+        // Helper function from: http://stackoverflow.com/a/7557433/274826
+        function isElementInViewport(el) {
+        // special bonus for those using jQuery
+        if (typeof jQuery === "function" && el instanceof jQuery) {
+            el = el[0];
+        }
+        var rect = el.getBoundingClientRect();
+        return (
+            (rect.top <= 0
+            && rect.bottom >= 0)
+            ||
+            (rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.top <= (window.innerHeight || document.documentElement.clientHeight))
+            ||
+            (rect.top >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
+        );
+        }     
+    </script>
+    <script>      
+        document.addEventListener("click", cyclePics);
+        let click = 0
+    
+        function cyclePics() {
+            const listPics = ['coffee2.jpg', 'coffee5.jpg', 'coffee6.jpg', 'coffee7.jpg', 'coffee8.jpg'];
+            let background = document.querySelector('.container');        
+            click += 1 
+            if (click >= listPics.length) {
+                click = 0            
+            }
+            background.style.backgroundImage = "url(../static/photos/"  + listPics[click]; 
+            }    
+        </script>
+    {% block javascript %}
+    {% endblock javascript %} 
+</body>
+</html>

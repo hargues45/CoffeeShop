@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block header %}
+    <title>Zan's Coffee</title>
+    <link rel='stylesheet' href="{% static 'home/css/styles.css' %}">
+    {% endblock header %}
+</head>
+<body>    
+    {% block content2 %}
+    <section class='sections'>
+        <div class='section1'>
+            <h1 class="message">Grab a Cup</h1>
+        </div>
+        <div class="section2">
+            <img class='coffeeimage' src="{% static 'photos/coffee4.jpg' %}" alt="coffee">
+            <h1 class="messages">Enjoy the Day</h1>
+        </div>
+        <div class='section3'> 
+            <a href="{% url 'home' %}" class="section-link">Home</a>  
+            <a href="{% url 'aboutus' %}" class="section-link">About</a>
+            <a href="" class="section-link">Menu</a>
+            <a href="" class="section-link">Contact</a>
+        </div>
+    </section>
+    <section class='whitespace'>
+        <div class="whitesection">                
+        </div>
+    </section>
+    <section class="calltoaction">
+        <div class="middlecalltoaction">
+            <h1 class="call-message">Join Us For Updates on Your Favorite Coffee</h1>
+            <a href='' class='call-btn'>Join Now</a>
+        </div>
+    </section>
+    {% endblock content2 %}           
+</body>
+</html>
